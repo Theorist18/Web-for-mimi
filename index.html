@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cozy Pixel Buttons</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+
+  <!-- Pixel Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-sky: #9bd4f8;
+      --accent-primary: #1a4ceb;
+      --accent-secondary: #ff69b4;
+      --warm-neutral: #ebc487;
+      --outline: #000000;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      font-family: "Press Start 2P", monospace;
+      background: var(--bg-sky);
+      color: var(--outline);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    /* Background */
+    .bg {
+      position: fixed;
+      inset: 0;
+      background: url("https://github.com/user-attachments/assets/a6d24bbd-3d2e-4787-96d6-cbaaa35645e4")
+        no-repeat center center;
+      background-size: cover;
+      z-index: 0;
+      filter: saturate(1.1) contrast(1.05);
+    }
+
+    header, footer {
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.7);
+      border-top: 4px solid var(--outline);
+      border-bottom: 4px solid var(--outline);
+      padding: 10px;
+      backdrop-filter: blur(4px);
+      font-size: clamp(10px, 2vw, 14px);
+    }
+
+    main {
+      flex: 1;
+      z-index: 1;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      padding: 20px 0;
+    }
+
+    /* Scrollbar styling (cute pixel theme) */
+    main::-webkit-scrollbar {
+      width: 10px;
+    }
+    main::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.5);
+      border-left: 3px solid var(--outline);
+    }
+    main::-webkit-scrollbar-thumb {
+      background: var(--accent-primary);
+      border: 2px solid var(--outline);
+    }
+
+    /* Buttons list */
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(30px, 5vw, 60px);
+      width: min(90%, 600px);
+      padding: 20px;
+    }
+
+    /* Larger Floating Buttons */
+    .btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid var(--outline);
+      border-radius: 20px;
+      background: var(--white);
+      padding: 20px;
+      width: clamp(220px, 60vw, 340px);
+      aspect-ratio: 1 / 1;
+      cursor: pointer;
+      box-shadow: 0 8px 0 rgba(0, 0, 0, 0.15);
+      animation: float 3s ease-in-out infinite;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      image-rendering: pixelated;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* Button Images */
+    .btn img {
+      width: 80%;
+      height: auto;
+      image-rendering: pixelated;
+      border: 3px solid var(--outline);
+      border-radius: 10px;
+      background: var(--white);
+      margin-bottom: 16px;
+    }
+
+    /* Icon Label */
+    .btn i {
+      font-size: clamp(16px, 4vw, 24px);
+      margin-top: 6px;
+    }
+
+    /* Individual Colors */
+    .btn:nth-child(1) { background: var(--accent-primary); color: var(--white); animation-delay: 0s; }
+    .btn:nth-child(2) { background: var(--accent-secondary); color: var(--white); animation-delay: 0.3s; }
+    .btn:nth-child(3) { background: var(--warm-neutral); animation-delay: 0.6s; }
+    .btn:nth-child(4) { background: var(--white); animation-delay: 0.9s; }
+
+    @media (max-width: 500px) {
+      .btn {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+
+  <header>
+    <h1>For my Mimi</h1>
+  </header>
+
+  <main>
+    <div class="buttons">
+      <!-- Button 1: Heart -->
+      <a href="#" target="_self" class="btn">
+        <img src="https://github.com/user-attachments/assets/89f22934-1bb6-4605-876c-3388419db27d" alt="Heart icon" />
+        <i class="fa-solid fa-heart"></i>
+      </a>
+
+      <!-- Button 2: Flower -->
+      <a href="#" target="_self" class="btn">
+        <img src="https://github.com/user-attachments/assets/4b3f1c24-b364-46ad-af0e-59408b785984" alt="Flower icon" />
+        <i class="fa-solid fa-seedling"></i>
+      </a>
+
+      <!-- Button 3: House -->
+      <a href="#" target="_self" class="btn">
+        <img src="https://github.com/user-attachments/assets/7c01021d-10a0-465f-92c0-4f3a3a3c7680" alt="House icon" />
+        <i class="fa-solid fa-house"></i>
+      </a>
+
+      <!-- Button 4: Cat -->
+      <a href="#" target="_self" class="btn">
+        <img src="https://github.com/user-attachments/assets/5c90915e-a37a-4dac-b8e7-1d734d214c8c" alt="Cat icon" />
+        <i class="fa-solid fa-cat"></i>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>Made with </p>
+  </footer>
+</body>
+</html>
